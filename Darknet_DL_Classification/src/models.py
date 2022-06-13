@@ -21,7 +21,7 @@ class ClassificationModel:
             self.model.compile(optimizer='adam', loss=tf.keras.losses.BinaryCrossentropy(from_logits=True), metrics=['accuracy'])
 
         elif self.job == 'characterization':
-            # create model to characterize data (by traffice category)
+            # create model to characterize data (by traffic category)
 
             self.x = tf.keras.layers.Dense(128, activation=self.activation_functions)(self.all_features)
             self.x = tf.keras.layers.Dense(64, activation=self.activation_functions)(self.x)
