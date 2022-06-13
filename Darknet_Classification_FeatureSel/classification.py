@@ -89,7 +89,7 @@ def show_kfold_report(report, labels):
     print("\n\n", "%d-fold Accuracy: %0.2f%%"%(report["n_splits"],report['accuracy']*100))
 
 # create a function to display confusion matrix
-def show_confusion_matrix(model, X, y, labels, vmax=None, rotation=(0,0), fname=None, display_labels=None, figsize=(8,8)):
+def show_confusion_matrix(model, X, y, labels, vmax=None, rotation=(0,0), fname='C:\Users\ceyda\Documents\GitHub\grad-project/Images/1', display_labels=None, figsize=(8,8)):
     y_pred = model.predict(X)
     conf = confusion_matrix(y, y_pred)
     n_spaces = max([len(label) for label in labels])
@@ -115,6 +115,7 @@ def show_confusion_matrix(model, X, y, labels, vmax=None, rotation=(0,0), fname=
     plt.ylabel("Real")
     plt.xlabel("Predicted")
     plt.tight_layout()
+    #if fname != None: 2nd option if directory doesn't work fine!!!!!!!!!!!!!!!
     plt.savefig(fname)
     plt.show()
     return accs
