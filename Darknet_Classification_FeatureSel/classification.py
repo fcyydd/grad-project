@@ -115,7 +115,6 @@ def show_confusion_matrix(model, X, y, labels, vmax=None, rotation=(0,0), fname=
     plt.ylabel("Real")
     plt.xlabel("Predicted")
     plt.tight_layout()
-    #if fname != None: 2nd option if directory doesn't work fine!!!!!!!!!!!!!!!
     plt.savefig(fname)
     plt.show()
     return accs
